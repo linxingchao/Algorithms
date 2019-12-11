@@ -1,3 +1,4 @@
+#从索引位置为1的位置开始，设置为缓存值，与左侧的所有数据进行比较
 def insert_sort(list):
     list_len = len(list)
     for i in range(1,list_len):
