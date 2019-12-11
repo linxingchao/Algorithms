@@ -1,3 +1,4 @@
+#每一次遍历，将未排序数据的最大值放在正确的位置
 def bubble_sort(list):
     if(len(list)<1):
         return;
