@@ -4,7 +4,7 @@ class SortArray(object):
     def __init__(self, array):
         self.array = array
 
-
+    #O(NlogN)
     def quickSort(self,leftIndex,rightIndex):
         if(len(self.array)<1 or (leftIndex>=rightIndex)):
             return;
@@ -38,17 +38,22 @@ class SortArray(object):
         self.array[leftIndex],self.array[povit_position] = self.array[povit_position],self.array[leftIndex]
 
         return leftIndex
+    def quickSelect(self,kth_low_value,leftindex,rightIndex):
+        if(len(self.array)<1 or (leftindex>=rightIndex)):
+            return
+        povit_index = self.partion(leftindex,rightIndex)
+        if(povit_index>kth_low_value):
+            self.quickSelect(kth_low_value,leftindex,povit_index-1)
+        elif(povit_index<kth_low_value):
+            self.quickSelect(kth_low_value,povit_index+1,rightIndex)
+        elif(povit_index == kth_low_value):
+            return self.array[povit_index]
 
+list2 = [0, 50, 20, 10, 60, 30]
+array1 = SortArray(list2)
+value = array1.quickSelect(1,0,len(array1)-1)
+print(value)
 
-
-
-                
-list = [0,5,2,1,6,3]
-length = len(list)
-array = SortArray(list)
-array.quickSort(0,length-1)
-print(array.array)
-print(list)
                 
 
 
