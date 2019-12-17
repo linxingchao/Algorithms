@@ -3,17 +3,17 @@ def insert_sort(list):
     list_len = len(list)
     for i in range(1,list_len):
         tempValue = list[i]
-        j = i-1
-        while j>=0:
-            if(tempValue<list[j]):
-                list[j+1]=list[j]
-                list[j]=tempValue
-            j=j-1
+        position = i
+        while position>0 and list[position-1]>tempValue:
+            list[position] = list[position-1]
+            position = position-1
+        list[position] = tempValue
+            
 
-list = [2,4,1,6,8,4,3]
+list = [2,4,1,6,8,3]
 insert_sort(list)
-for i in list:
-    print(i)
+print(list)
+  
 
 
 
