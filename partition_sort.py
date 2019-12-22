@@ -39,17 +39,20 @@ class SortArray(object):
 
         return leftIndex
 
+def quicksort2(array):
+    if(len(array)<2):
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i<=pivot]
+        greater = [i for i in  array[1:] if i>pivot]
+
+        return quicksort2(less) + [pivot] + quicksort2(greater)
 
 
-
-                
 list = [0,5,2,1,6,3]
 length = len(list)
 array = SortArray(list)
 array.quickSort(0,length-1)
 print(array.array)
 print(list)
-                
-
-
-            
