@@ -50,11 +50,7 @@ class SortArray(object):
             return self.array[povit_index]
 
 list2 = [0, 50, 20, 10, 60, 30]
-array1 = SortArray(list2)
-value = array1.quickSelect(1,0,len(array1)-1)
-print(value)
 
-<<<<<<< HEAD
 def quicksort2(array):
     if(len(array)<2):
         return array
@@ -64,17 +60,3 @@ def quicksort2(array):
         greater = [i for i in  array[1:] if i>pivot]
 
         return quicksort2(less) + [pivot] + quicksort2(greater)
-
-
-list = [0,5,2,1,6,3]
-length = len(list)
-array = SortArray(list)
-array.quickSort(0,length-1)
-print(array.array)
-print(list)
-=======
-                
-
-
-            
->>>>>>> 5ad5da7461620947c193ed64844a814554e67f0e
